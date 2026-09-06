@@ -1,0 +1,547 @@
+{
+  "metadata": {
+    "title": "Apple Magic Blog",
+    "description": "La magie d’Apple, décryptée. Tests approfondis, guides d'achat, comparatifs et actualités sur iPhone, iPad, Mac, Apple Watch et bien plus encore."
+  },
+  "common": {
+    "skipToContent": "Aller au contenu",
+    "readMore": "Lire la suite",
+    "backHome": "Retour à l’accueil",
+    "goHome": "Aller à l’accueil",
+    "loading": "Chargement",
+    "error": "Une erreur est survenue",
+    "retry": "Réessayer",
+    "back": "Retour",
+    "close": "Fermer",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "share": "Partager",
+    "menu": "Menu",
+    "search": "Rechercher",
+    "followUs": "Suivez-nous",
+    "allRightsReserved": "Tous droits réservés.",
+    "about": "À propos",
+    "contact": "Contact"
+  },
+  "nav": {
+    "home": "Accueil",
+    "blog": "Blog",
+    "categories": "Catégories",
+    "news": "Actualités",
+    "iphone": "iPhone",
+    "ipad": "iPad",
+    "mac": "Mac",
+    "watch": "Apple Watch",
+    "airpods": "AirPods",
+    "vision": "Vision Pro",
+    "accessories": "Accessoires",
+    "software": "Logiciels",
+    "guides": "Guides d’achat",
+    "comparisons": "Comparatifs",
+    "reviews": "Tests",
+    "studio": "Studio",
+    "all": "Parcourir toutes les catégories"
+  },
+  "hero": {
+    "eyebrow": "Apple Magic Blog",
+    "title": "La magie d’Apple, décryptée",
+    "subtitle": "Tests approfondis, guides d'achat intelligents et dernières actualités — conçus pour l'Afrique.",
+    "ctaPrimary": "Découvrir les dernières",
+    "ctaSecondary": "Parcourir les guides"
+  },
+  "home": {
+    "featured": "À la une",
+    "latest": "Derniers articles",
+    "trending": "Tendances",
+    "viewAll": "Tout voir",
+    "viewAllArticles": "Voir tous les articles",
+    "newsletterTitle": "Ne manquez jamais la magie",
+    "newsletterSubtitle": "Recevez les meilleures actualités, guides et offres Apple dans votre boîte mail. Gratuit.",
+    "emailPlaceholder": "Votre adresse e-mail",
+    "subscribe": "S’abonner",
+    "subscribed": "Merci pour votre abonnement !",
+    "subscribeError": "Une erreur est survenue. Veuillez réessayer.",
+    "exploreCategories": "Explorer par catégorie"
+  },
+  "post": {
+    "writtenBy": "Écrit par",
+    "readingTime": "{count} min de lecture",
+    "updatedAt": "Mis à jour",
+    "published": "Publié",
+    "shareOn": "Partager cet article",
+    "tableOfContents": "Dans cet article",
+    "related": "Continuer la lecture",
+    "readMore": "Lire la suite",
+    "moreIn": "Plus dans {category}",
+    "pros": "Pour",
+    "cons": "Contre",
+    "verdict": "Notre verdict",
+    "backToBlog": "Retour au blog",
+    "notFound": "Article introuvable",
+    "copyLink": "Copier le lien",
+    "copied": "Lien copié !"
+  },
+  "category": {
+    "title": "{category}",
+    "articles": "articles",
+    "allArticles": "Tous les articles",
+    "subcategories": "Sous-catégories",
+    "notFound": "Catégorie introuvable",
+    "empty": "Les catégories apparaîtront ici dès leur publication.",
+    "browse": "Parcourir"
+  },
+  "tag": {
+    "title": "#{tag}",
+    "articles": "articles",
+    "notFound": "Étiquette introuvable"
+  },
+  "author": {
+    "title": "{author}",
+    "articlesTitle": "Articles de cet auteur",
+    "articlesEyebrow": "Récents",
+    "noArticles": "Aucun article publié pour le moment."
+  },
+  "search": {
+    "title": "Recherche",
+    "placeholder": "Rechercher iPhone, Mac, tutoriels…",
+    "resultsFor": "Résultats pour « {query} »",
+    "noResults": "Aucun résultat. Essayez une autre recherche.",
+    "startTyping": "Recherchez des articles, produits, pages, auteurs, catégories et tags",
+    "suggestions": "Suggestions",
+    "viewAll": "Voir les {count} résultats"
+  },
+  "comments": {
+    "changeAvatar": "Modifier la photo de profil",
+    "imageDropHint": "Touchez pour choisir des images · jusqu'à 10 fichiers, 5 Mo chacun",
+    "title": "Commentaires",
+    "count": "{count} commentaires",
+    "placeholder": "Partagez votre avis et rejoignez la discussion…",
+    "replyPlaceholder": "Rédiger une réponse…",
+    "name": "Nom",
+    "email": "E-mail (non publié)",
+    "submit": "Publier le commentaire",
+    "submitSuccess": "Merci ! Votre commentaire est en attente de modération.",
+    "submitError": "Impossible de publier votre commentaire. Veuillez réessayer.",
+    "loginHint": "Les commentaires sont modérés. Merci de rester courtois.",
+    "empty": "Soyez le premier à partager votre avis.",
+    "reply": "Répondre",
+    "replyingTo": "Réponse à {name}",
+    "cancelReply": "Annuler",
+    "like": "J’aime",
+    "dislike": "Je n’aime pas",
+    "share": "Partager",
+    "addImages": "Joindre des images ({count} restant)",
+    "removeImage": "Supprimer l’image",
+    "tooManyImages": "Vous pouvez joindre jusqu’à 10 images par commentaire.",
+    "invalidImage": "Seuls les fichiers image sont autorisés.",
+    "imageTooLarge": "Chaque image doit faire 5 Mo ou moins.",
+    "moderationNote": "Les commentaires sont soumis à modération avant publication."
+  },
+  "product": {
+    "buyNow": "Acheter",
+    "priceFrom": "Dès",
+    "specs": "Caractéristiques",
+    "relatedProducts": "Produits associés",
+    "reviews": "{count} avis",
+    "rating": "{rating} sur 5",
+    "noPricing": "Prix non communiqué",
+    "backToProducts": "Retour aux produits"
+  },
+  "footer": {
+    "about": "À propos d’Apple Magic",
+    "aboutText": "Apple Magic Blog est la référence des actualités, tests et guides d'achat Apple en Afrique. Indépendant, magnifiquement conçu.",
+    "explore": "Explorer",
+    "resources": "Ressources",
+    "support": "Assistance",
+    "contactUs": "Contactez-nous",
+    "editorialPolicy": "Charte éditoriale",
+    "transparency": "Transparence",
+    "privacy": "Confidentialité",
+    "terms": "Conditions d’utilisation",
+    "subscribe": "Abonnez-vous à la newsletter",
+    "localizedMotto": "Faire de l’Afrique le premier marché Apple d’ici 2030.",
+    "allRightsReserved": "Tous droits réservés.",
+    "blog": "Blog",
+    "news": "Actus",
+    "reviews": "Tests",
+    "buyingGuides": "Guides d’achat",
+    "comparisons": "Comparatifs",
+    "tutorials": "Tutoriels",
+    "aboutLink": "À propos",
+    "authors": "Auteurs",
+    "tags": "Étiquettes",
+    "categories": "Catégories",
+    "products": "Produits",
+    "search": "Rechercher",
+    "region": "Afrique"
+  },
+  "pwa": {
+    "install": "Installer Apple Magic",
+    "offlineTitle": "Vous êtes hors ligne",
+    "offlineBody": "Vous pouvez toujours consulter ce que vous avez déjà chargé.",
+    "goOnline": "Votre connexion est rétablie",
+    "cachedArticles": "Disponible hors ligne"
+  },
+  "contactForm": {
+    "name": "Votre nom",
+    "namePlaceholder": "Jean Dupont",
+    "email": "Adresse e-mail",
+    "topic": "Sujet",
+    "topic_general": "Question générale",
+    "topic_editorial": "Rédaction / conseils de sujets",
+    "topic_partnerships": "Publicité / partenariats",
+    "topic_support": "Assistance / corrections",
+    "topic_press": "Presse & médias",
+    "message": "Message",
+    "messagePlaceholder": "Comment pouvons-nous vous aider ?",
+    "submit": "Envoyer le message",
+    "successTitle": "Message envoyé",
+    "successBody": "Merci de nous avoir écrit. Notre équipe vous répondra sous deux jours ouvrés.",
+    "serverError": "Une erreur s’est produite de notre côté. Veuillez réessayer dans un instant.",
+    "networkError": "Impossible de joindre le serveur. Vérifiez votre connexion et réessayez."
+  },
+  "pages": {
+    "about": {
+      "eyebrow": "À propos",
+      "title": "La magie d’Apple, décryptée",
+      "intro": "Apple Magic Blog est un média indépendant consacré à l’univers Apple — actualités, tests, guides d’achat, comparatifs et dossiers logiciels — écrit pour les lecteurs d’Afrique, et fièrement ancré au Cameroun, où notre siège est basé à Douala.",
+      "lastUpdated": "Équipe de 3 · Siège à Douala, Cameroun · Au service de l’Afrique en FCFA et devises locales",
+      "newsletterHook": "Recevez le meilleur de l’actualité, des guides et des bons plans Apple — gratuit, une fois par semaine, sans spam.",
+      "sections": [
+        {
+          "heading": "Notre mission",
+          "body": [
+            "Apple fabrique certaines des technologies les plus passionnantes au monde. Notre mission est simple : vous aider à les comprendre, à bien les choisir et à en tirer le meilleur — sans jargon, sans battage et sans piège à clics.",
+            "Nous existons parce que le discours dominant sur les smartphones et les ordinateurs ignore trop souvent les réalités des consommateurs africains : droits d’importation, fiabilité du réseau électrique, conditions réseau, prix locaux et valeur de revente. Nous couvrons tout cela."
+          ],
+          "bullets": [
+            "Des tests honnêtes et complets de chaque produit recommandé",
+            "Des guides d’achat aux prix dans les devises que vous utilisez",
+            "Des comparatifs qui répondent clairement à la question « lequel ? »",
+            "Des tutoriels pratiques sur iOS, iPadOS, macOS et Apple Intelligence"
+          ]
+        },
+        {
+          "heading": "Ce que nous faisons",
+          "body": [
+            "Chaque semaine, nous publions des tests approfondis, des comparatifs côte à côte et des guides pas à pas. Nous testons les appareils dans le monde réel — sur votre réseau, sous votre chaleur, dans vos trajets — jamais sur une simple diapositive marketing.",
+            "Notre couverture couvre tout l’écosystème Apple : iPhone, iPad, Mac, Apple Watch, AirPods, Vision Pro et les accessoires qui les complètent."
+          ],
+          "bullets": [
+            "Des avis avec pour/contre clairs et un verdict honnête",
+            "Des prix adaptés à l’Afrique (USD, ZAR, KES, NGN, EGP, GHS)",
+            "Des tutoriels faciles à suivre",
+            "Des actualités et analyses avec un vrai contexte sectoriel"
+          ]
+        },
+        {
+          "heading": "Indépendance éditoriale",
+          "body": [
+            "Apple Magic Blog est une entreprise indépendante. La publicité et les partenariats d’affiliation n’influencent jamais nos tests, nos guides ou nos verdicts. Lorsqu’un fabricant nous prête un appareil, nous le précisons. Nous publions le bon comme le mauvais, équitablement.",
+            "Nous expliquons comment nous gagnons de l’argent (liens d’affiliation transparents et publicités) et restons totalement séparés du processus éditorial. Aucun emplacement payé n’est déguisé en opinion."
+          ]
+        },
+        {
+          "heading": "Qui nous sommes",
+          "body": [
+            "Nous avons notre siège à Douala, au Cameroun — la capitale économique de l’Afrique centrale — et notre équipe s’étend également à Accra, Nairobi et Casablanca. Nous connaissons de première main les réalités du marché africain : droits d’importation, fiabilité du courant, conditions réseau et les marques qui nous servent réellement.",
+            "Notre cœur éditorial bat au plus près de notre marché d’origine, le Cameroun, l’Afrique de l’Ouest et centrale, où la CEMAC et l’ensemble de la région s’attendent à des prix en FCFA et à des conseils d’achat pragmatiques. Nous ne sommes pas une ferme de contenu — nous réfléchissons profondément à chaque article avant de le publier."
+          ]
+        },
+        {
+          "heading": "Notre marché d’origine : le Cameroun et l’Afrique centrale",
+          "body": [
+            "Être basés au Cameroun façonne tout ce que nous publions. Nous comprenons le coût réel d’un iPhone ou d’un Mac à Douala ou Yaoundé — expédition, douanes, droits CEMAC et valeur de revente locale — et nous en tenons compte dans chaque guide d’achat.",
+            "C’est pourquoi notre prix par défaut est en FCFA (XAF), converti en direct dans la devise locale du visiteur. Nous couvrons les opérateurs, les revendeurs et les conditions de marché qui comptent pour les acheteurs du Cameroun, du Gabon, du Congo, du Tchad, du Sénégal, de la Côte d’Ivoire et de tout le continent."
+          ],
+          "bullets": [
+            "Le FCFA (XAF) comme devise par défaut, convertie en direct dans votre devise locale",
+            "Des conseils sur les droits d’importation, la douane et les taxes CEMAC pour l’Afrique centrale",
+            "Des avis honnêtes sur la garantie, les revendeurs agréés et le service après-vente au Cameroun",
+            "Des recommandations de confiance, achetables sur notre boutique officielle applemagicstore.tech"
+          ]
+        },
+        {
+          "heading": "Notre promesse éditoriale",
+          "body": [
+            "Pas de pièges à clics. Pas de remplissage. Aucun emplacement payé déguisé en conseil. Chaque test liste ses points forts et faibles et se termine par un verdict clair. Chaque guide d’achat est tarifé pour le marché du lecteur, dans sa devise locale. Et si nous nous trompons, nous corrigeons rapidement et visiblement."
+          ]
+        }
+      ]
+    },
+    "privacy": {
+      "eyebrow": "Confidentialité",
+      "title": "Politique de confidentialité",
+      "intro": "Nous collectons le strict minimum, nous ne vendons jamais vos données et nous sommes transparents sur tout ce que nous en faisons — conformément aux lois camerounaises sur la protection des données et la cybercriminalité, et à celles de chaque marché que nous servons.",
+      "lastUpdated": "Dernière mise à jour : 3 septembre 2026",
+      "sections": [
+        {
+          "heading": "1. Introduction",
+          "body": [
+            "Apple Magic Blog (« nous ») respecte votre vie privée. Cette politique explique ce que nous collectons, pourquoi et les choix dont vous disposez. Elle s’applique à applemagic.blog, à notre boutique officielle applemagicstore.tech et à nos services associés.",
+            "Entreprise dont le siège est à Douala, au Cameroun, nous respectons le cadre juridique national camerounais, notamment la Loi n° 2010/013 du 21 décembre 2010 sur la protection des données à caractère personnel, la Loi n° 2010/012 du 21 décembre 2010 relative à la cybersécurité et la lutte contre la cybercriminalité au Cameroun, ainsi que les orientations de l’Agence nationale des technologies de l’information et de la communication (ANTIC) et de la Commission nationale de la protection des données (CONPIL).",
+            "Nous respectons également les cadres de protection des données de chaque marché que nous servons, notamment la NDPR du Nigeria, la loi kényane sur la protection des données, la POPIA sud-africaine et la loi ghanéenne sur la protection des données."
+          ]
+        },
+        {
+          "heading": "2. Ce que nous collectons",
+          "body": [
+            "Nous collectons uniquement ce qui est nécessaire au fonctionnement du service :",
+            ""
+          ],
+          "bullets": [
+            "Données d’identité : le nom et l’e-mail fournis lors d’un abonnement, d’un commentaire ou d’un contact",
+            "Données techniques : adresse IP, type de navigateur, appareil et journaux d’utilisation basiques",
+            "Données d’engagement : les pages lues et vos interactions, utilisées de façon agrégée"
+          ]
+        },
+        {
+          "heading": "3. Comment nous utilisons vos données",
+          "body": ["Nous n’utilisons vos données que pour :", ""],
+          "bullets": [
+            "Vous envoyer la newsletter et des mises à jour personnalisées que vous avez demandées",
+            "Modérer les commentaires et sécuriser la communauté",
+            "Améliorer notre contenu et sa pertinence éditoriale",
+            "Répondre à vos questions et demandes d’assistance"
+          ]
+        },
+        {
+          "heading": "4. Cookies et statistiques",
+          "body": [
+            "Nous utilisons des statistiques agrégées respectueuses de la vie privée pour comprendre quels articles aident le plus les lecteurs. Nous anonymisons les adresses IP et ne construisons pas de profils publicitaires inter-sites.",
+            "Vous pouvez désactiver les cookies dans votre navigateur à tout moment sans perdre l’accès à notre contenu."
+          ]
+        },
+        {
+          "heading": "5. Partage et tiers",
+          "body": [
+            "Nous ne vendons jamais vos informations personnelles. Nous ne partageons les données qu’avec des sous-traitants de confiance (hébergement, e-mail, statistiques) et uniquement dans la mesure nécessaire. Lorsque vous achetez via un lien d’affiliation, le détaillant peut définir ses propres cookies selon sa propre politique."
+          ]
+        },
+        {
+          "heading": "6. Conservation des données",
+          "body": [
+            "Nous conservons les données personnelles uniquement le temps nécessaire à la finalité de leur collecte, ou comme l’exige la loi. Les commentaires et abonnements sont conservés jusqu’à ce que vous demandiez leur suppression."
+          ]
+        },
+        {
+          "heading": "7. Vos droits",
+          "body": [
+            "Selon votre lieu de résidence, vous pouvez avoir le droit de :",
+            ""
+          ],
+          "bullets": [
+            "Accéder à vos données et les rectifier",
+            "Obtenir leur effacement (« droit à l’oubli »)",
+            "Bénéficier de la portabilité des données",
+            "Déposer une plainte auprès de votre autorité locale de protection des données"
+          ]
+        },
+        {
+          "heading": "8. Sécurité",
+          "body": [
+            "Nous utilisons le chiffrement en transit, des contrôles d’accès à privilèges minimaux et une surveillance de routine pour protéger vos données. Aucun système n’est parfaitement sûr, mais nous veillons à la sécurité des vôtres."
+          ]
+        },
+        {
+          "heading": "9. Vos droits au Cameroun",
+          "body": [
+            "Si vous êtes au Cameroun, vous bénéficiez des protections de la Loi n° 2010/013 sur la protection des données à caractère personnel. Vous pouvez saisir la Commission nationale de la protection des données à caractère personnel (CONPIL) en cas de traitement illicite.",
+            "Notre siège étant à Douala, au Cameroun, notre traitement de vos données relève également du droit camerounais. Vous conservez toujours le droit d’accéder à vos données, de les rectifier, de les effacer ou de vous opposer à leur traitement, et de retirer votre consentement à tout moment.",
+            ""
+          ],
+          "bullets": [
+            "Droit de déposer une plainte auprès de la CONPIL (Commission nationale de la protection des données à caractère personnel)",
+            "Droit de signaler à l’ANTIC toute question de cybersécurité et de cybercriminalité",
+            "Droit d’accès, de rectification, d’effacement et de portabilité tel que décrit dans cette politique",
+            "Contactez-nous à privacy@applemagic.blog — nous répondons sous 30 jours"
+          ]
+        },
+        {
+          "heading": "10. Contact",
+          "body": [
+            "Pour toute demande relative à la vie privée, écrivez à privacy@applemagic.blog. Nous répondons sous 30 jours. Notre siège social se situe à Douala, au Cameroun."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "eyebrow": "Légal",
+      "title": "Conditions d’utilisation",
+      "intro": "Les règles qui régissent votre utilisation d’Apple Magic Blog. Merci de les lire — elles sont courtes et justes.",
+      "lastUpdated": "Dernière mise à jour : 3 septembre 2026",
+      "sections": [
+        {
+          "heading": "1. Acceptation des conditions",
+          "body": [
+            "En accédant à Apple Magic Blog, vous acceptez ces conditions d’utilisation. Si vous n’êtes pas d’accord, merci de ne pas utiliser le site. Nous pouvons les mettre à jour ; continuer à utiliser le site après une modification vaut acceptation."
+          ]
+        },
+        {
+          "heading": "2. Notre contenu",
+          "body": [
+            "Tous les textes, images, designs et marques de ce site sont notre propriété ou nous sont concédés. Vous pouvez partager et citer des extraits raisonnables avec mention de la source, mais pas republier des articles entiers ni utiliser notre marque sans autorisation écrite.",
+            "Apple et les marques associées sont des marques déposées d’Apple Inc. Nous sommes un média indépendant, non affilié à Apple Inc., non approuvé ni parrainé par elle."
+          ]
+        },
+        {
+          "heading": "3. Exactitude et exclusions",
+          "body": [
+            "Nous nous efforçons d’être précis, mais la technologie évolue vite et nous ne pouvons garantir que chaque détail est à jour. Le contenu est fourni « tel quel », à titre d’information et de divertissement. Nous ne sommes pas responsables des décisions prises sur la base de notre contenu.",
+            "Les prix indiqués sont indicatifs et peuvent varier selon le détaillant, la région et l’époque. Vérifiez toujours le prix final avant d’acheter."
+          ]
+        },
+        {
+          "heading": "4. Divulgation des liens d’affiliation",
+          "body": [
+            "Certains articles contiennent des liens d’affiliation. Si vous achetez via l’un d’eux, nous pouvons percevoir une petite commission sans coût supplémentaire pour vous. Cela n’influence jamais nos verdicts."
+          ]
+        },
+        {
+          "heading": "5. Utilisation acceptable",
+          "body": [
+            "En commentant ou en échangeant avec notre communauté, vous acceptez de :",
+            ""
+          ],
+          "bullets": [
+            "Rester courtois et dans le sujet",
+            "Ne pas publier de spam, publicité ou auto-promotion",
+            "Ne pas publier de contenu illégal, diffamatoire ou haineux",
+            "Ne pas usurper l’identité d’autrui ni publier ses données personnelles",
+            "Ne pas téléverser de fichiers nuisibles ni tenter de perturber le service"
+          ]
+        },
+        {
+          "heading": "6. Commentaires et contenu utilisateur",
+          "body": [
+            "Les commentaires sont modérés et publiés après approbation. En publiant, vous nous accordez une licence non exclusive d’affichage et de modération de votre contenu. Nous pouvons retirer tout contenu enfreignant ces conditions à notre discrétion."
+          ]
+        },
+        {
+          "heading": "7. Liens tiers",
+          "body": [
+            "Nous fournissons des liens vers des détaillants et sites externes pour votre commodité. Nous ne sommes pas responsables de leur contenu, de leurs politiques ou de leur disponibilité."
+          ]
+        },
+        {
+          "heading": "8. Limitation de responsabilité",
+          "body": [
+            "Dans toute la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects, accessoires ou consécutifs découlant de votre utilisation du site. Rien ici ne limite les droits que vous confère le droit de la consommation."
+          ]
+        },
+        {
+          "heading": "9. Droit applicable",
+          "body": [
+            "Ces conditions sont régies par le droit applicable dans les juridictions où nous opérons, et les litiges seront résolus devant les tribunaux compétents."
+          ]
+        },
+        {
+          "heading": "10. Contact",
+          "body": [
+            "Des questions sur ces conditions ? Écrivez à legal@applemagic.blog."
+          ]
+        }
+      ]
+    },
+    "editorial": {
+      "eyebrow": "Éditorial",
+      "title": "Politique éditoriale",
+      "intro": "Comment nous écrivons, testons et décidons de publier — pour que vous puissiez faire confiance à chaque article lu sur Apple Magic Blog.",
+      "lastUpdated": "Dernière mise à jour : 3 septembre 2026",
+      "sections": [
+        {
+          "heading": "Indépendance éditoriale",
+          "body": [
+            "Apple Magic Blog est un média indépendant et éditorialement autonome. Aucun annonceur, partenaire ou fabricant n’influence ce que nous publions, nos opinions ou l’ordre d’apparition des produits.",
+            "Notre seule allégeance va à nos lecteurs."
+          ]
+        },
+        {
+          "heading": "Comment nous testons les produits",
+          "body": [
+            "Nous testons les produits dans les conditions réellement vécues par notre public — sur les réseaux locaux, sous des climats chauds, sur des cycles de batterie réalistes et de longues périodes d’utilisation. Nous ne bâclons jamais un test pour coller à une date de sortie.",
+            "Lorsqu’un appareil est prêté par un fabricant, nous le mentionnons. Nous n’acceptons jamais de paiement pour un avis positif et conservons généralement l’appareil après le test afin d’évaluer sa fiabilité à long terme."
+          ],
+          "bullets": [
+            "Des tests réels de batterie et de performances",
+            "Des essais photo dans des conditions variées, y compris en basse lumière et en plein soleil",
+            "Des tests de fiabilité à long terme quand c’est pertinent",
+            "Des points forts, points faibles et un verdict final chiffré"
+          ]
+        },
+        {
+          "heading": "Sources et exactitude",
+          "body": [
+            "Nous attribuons les faits à leurs sources, distinguons actualité, opinion et analyse, et corrigeons les erreurs rapidement et visiblement. Si nous rapportons quelque chose d’inexact, nous mettons l’article à jour et signalons la correction.",
+            "Pour les produits à paraître, nous indiquons clairement que le contenu repose sur des informations préliminaires, des rumeurs ou une première prise en main."
+          ]
+        },
+        {
+          "heading": "Éthique et conflits d’intérêts",
+          "body": [
+            "Nous déclarons toute relation pertinente et séparons strictement l’éditorial de la publicité. Nos journalistes n’acceptent ni cadeaux, ni voyages, ni faveurs susceptibles de compromettre notre indépendance.",
+            "Si un conflit survient sur un sujet, nous écartons le rédacteur concerné et nous le signalons."
+          ]
+        },
+        {
+          "heading": "Contenu sponsorisé",
+          "body": [
+            "Nous publions rarement du contenu sponsorisé, et lorsqu’il existe, il est toujours clairement identifié et ne ressemble jamais à de l’éditorial. Il n’entre jamais en intersection avec nos tests indépendants.",
+            "Les liens d’affiliation sont transparents et ne modifient jamais le résultat d’une recommandation."
+          ]
+        },
+        {
+          "heading": "Politique de correction",
+          "body": [
+            "Si vous repérez une erreur, écrivez-nous à corrections@applemagic.blog. Nous examinons chaque signalement, corrigeons les erreurs réelles de façon visible et conservons un historique des corrections importantes."
+          ]
+        },
+        {
+          "heading": "Commentaires et communauté",
+          "body": [
+            "Nos espaces de commentaires sont modérés afin de garder des conversations respectueuses et utiles. Nous supprimons le spam, les abus et la désinformation. Les décisions de modération sont prises de façon cohérente et équitable, et vous pouvez faire appel via support@applemagic.blog."
+          ]
+        },
+        {
+          "heading": "Contacter la rédaction",
+          "body": [
+            "Idées de sujets, conseils et demandes presse : tips@applemagic.blog."
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "eyebrow": "Contact",
+      "title": "Contactez-nous",
+      "intro": "Questions, conseils, presse ou partenariats — nous serions ravis de vous lire. Choisissez un canal ci-dessous ou envoyez-nous un message.",
+      "lastUpdated": "Nous répondons en général sous deux jours ouvrés",
+      "formTitle": "Envoyez-nous un message",
+      "sections": [
+        {
+          "heading": "Rédaction & conseils de sujets",
+          "body": [
+            "Vous avez un conseil Apple, une fuite ou un sujet à couvrir ? Écrivez à la rédaction : tips@applemagic.blog."
+          ]
+        },
+        {
+          "heading": "Publicité & partenariats",
+          "body": [
+            "Touchez notre audience engagée de passionnés d’Apple en Afrique. Pour la publicité, le contenu sponsorisé (clairement identifié) et les partenariats : partners@applemagic.blog."
+          ]
+        },
+        {
+          "heading": "Assistance & corrections",
+          "body": [
+            "Aide sur un article, un abonnement, un commentaire ou une correction : support@applemagic.blog. Pour la confidentialité : privacy@applemagic.blog. Pour les questions juridiques : legal@applemagic.blog."
+          ]
+        },
+        {
+          "heading": "Presse & médias",
+          "body": [
+            "Journalistes : utilisez press@applemagic.blog pour les communiqués sous embargo, les unités de test et les demandes d’interview."
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "name": "Apple Magic Blog",
+  "short_name": "Apple Magic",
+  "description": "The magic of Apple, decoded. In-depth reviews, buying guides, comparisons and news for iPhone, iPad, Mac, Apple Watch and more.",
+  "lang": "en",
+  "start_url": "/en",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "categories": ["news", "technology", "magazine", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/apple-magic-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/apple-magic-192-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/apple-magic-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/apple-magic-512-maskable.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Latest News",
+      "short_name": "News",
+      "url": "/en/categories/news",
+      "description": "The freshest Apple news"
+    },
+    {
+      "name": "Buying Guides",
+      "short_name": "Guides",
+      "url": "/en/categories/buying-guides",
+      "description": "Which Apple product is right for you?"
+    },
+    {
+      "name": "Comparisons",
+      "short_name": "Compare",
+      "url": "/en/categories/comparisons",
+      "description": "Compare Apple products side by side"
+    }
+  ]
+}

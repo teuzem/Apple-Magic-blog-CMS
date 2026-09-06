@@ -1,0 +1,13 @@
+Options -Indexes
+RewriteEngine On
+
+# Apache must have mod_rewrite, mod_proxy and mod_proxy_http enabled.
+# Keep existing public files direct and proxy every application route to Node.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+RewriteCond %{HTTP:Upgrade} =websocket [NC]
+RewriteRule ^(.*)$ ws://127.0.0.1:3000/$1 [P,L]
+
+RewriteRule ^(.*)$ http://127.0.0.1:3000/$1 [P,L]

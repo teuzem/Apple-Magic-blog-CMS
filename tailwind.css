@@ -1,0 +1,515 @@
+@import 'tailwindcss';
+@plugin "@tailwindcss/typography";
+
+/* ============================================================
+   APPLE MAGIC BLOG — Design System
+   Apple's visual identity: colors, type scale, spacing, motion
+   ============================================================ */
+
+@theme {
+  /* ---- Apple Neutral Palette ---- */
+  --color-black: #000000;
+  --color-ink: #1d1d1f;
+  --color-ink-soft: #424245;
+  --color-gray-1: #515154;
+  --color-gray-2: #6e6e73;
+  --color-gray-3: #86868b;
+  --color-gray-4: #a1a1a6;
+  --color-gray-5: #d2d2d7;
+  --color-gray-6: #e8e8ed;
+  --color-gray-7: #f5f5f7;
+  --color-gray-8: #fafafa;
+  --color-white: #ffffff;
+
+  /* ---- Apple Signature Accents ---- */
+  --color-apple-blue: #06c;
+  --color-apple-blue-hover: #0077ed;
+  --color-apple-blue-deep: #0071e3;
+  --color-link: #06c;
+  --color-link-hover: #003399;
+  --color-success: #0070f3;
+  --color-pink: #ff375f;
+  --color-turquoise: #64d2ff;
+  --color-orange: #ff9f0a;
+
+  /* Apple "Magic" gradient hues */
+  --color-magic-purple: #bf5af2;
+  --color-magic-violet: #5e5ce6;
+  --color-magic-blue: #2997ff;
+  --color-magic-pink: #ff375f;
+
+  /* ---- Product Identity Colors ---- */
+  --color-product-iphone: #2997ff;
+  --color-product-ipad: #ff9f0a;
+  --color-product-mac: #5e5ce6;
+  --color-product-watch: #ff375f;
+  --color-product-airpods: #34c759;
+  --color-product-vision: #bf5af2;
+  --color-product-services: #ff453a;
+  --color-product-accessories: #86868b;
+
+  /* ---- Apple Typography Scale ---- */
+  --font-family-apple-system:
+    -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-sf:
+    'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont,
+    'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-serif: 'New York', 'Times New Roman', Times, serif;
+  --font-family-mono:
+    'SF Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Text sizes matching Apple's editorial scale */
+  --text-display: 6.5rem;
+  --text-display-line-height: 1.02;
+  --text-display-letter-spacing: -0.015em;
+
+  --text-hero: 4.5rem;
+  --text-hero-line-height: 1.05;
+  --text-hero-letter-spacing: -0.015em;
+
+  --text-headline: 3rem;
+  --text-headline-line-height: 1.1;
+  --text-headline-letter-spacing: -0.008em;
+
+  --text-title-lg: 2.25rem;
+  --text-title-lg-line-height: 1.2;
+  --text-title-lg-letter-spacing: -0.005em;
+
+  --text-title: 1.75rem;
+  --text-title-line-height: 1.3;
+
+  --text-subtitle: 1.375rem;
+  --text-subtitle-line-height: 1.45;
+
+  --text-body-lg: 1.1875rem;
+  --text-body-lg-line-height: 1.6;
+
+  --text-body: 1rem;
+  --text-body-line-height: 1.6;
+
+  --text-caption: 0.875rem;
+  --text-caption-line-height: 1.35;
+
+  --text-caption-2: 0.75rem;
+  --text-caption-2-line-height: 1.3;
+
+  --text-overline: 0.6875rem;
+  --text-overline-line-height: 1.2;
+  --text-overline-letter-spacing: 0.08em;
+
+  /* ---- Border Radius (Apple's rounded forms) ---- */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 18px;
+  --radius-2xl: 24px;
+  --radius-full: 9999px;
+
+  /* ---- Shadows ---- */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 30px rgba(0, 0, 0, 0.16);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.08);
+  --shadow-flyout: 0 10px 40px rgba(0, 0, 0, 0.15);
+  --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.25);
+  --shadow-glow-blue:
+    0 0 0 1px rgba(0, 113, 227, 0.3), 0 0 24px rgba(0, 113, 227, 0.35);
+  --shadow-glow-magic:
+    0 0 0 1px rgba(191, 90, 242, 0.3), 0 0 32px rgba(191, 90, 242, 0.4);
+
+  /* ---- Motion ---- */
+  --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-apple-out: cubic-bezier(0, 0, 0.2, 1);
+  --ease-apple-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+
+  /* Brand animation keyframes */
+  --animate-twinkle: twinkle 2.6s ease-in-out infinite;
+  --animate-pulse-magic: pulse-magic 2.2s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow: glow 3.5s ease-in-out infinite;
+  --animate-shimmer: shimmer 2s linear infinite;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.82) rotate(12deg);
+  }
+}
+
+@keyframes pulse-magic {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px rgba(191, 90, 242, 0.5));
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.12);
+    filter: drop-shadow(0 0 10px rgba(191, 90, 242, 0.8));
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ---- Base layer ---- */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-5, currentColor);
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    overflow-x: clip;
+  }
+
+  body {
+    font-family: var(--font-family-apple-system);
+    background-color: var(--color-white);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: var(--tracking-apple-normal, -0.01em);
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  iframe,
+  canvas,
+  svg {
+    max-width: 100%;
+  }
+
+  pre,
+  code {
+    max-width: 100%;
+  }
+
+  ::selection {
+    background-color: var(--color-apple-blue);
+    color: var(--color-white);
+  }
+
+  /* Custom scrollbar — sleek Apple-style */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-gray-4);
+    border-radius: 9999px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray-3);
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+@utility overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* ---- Components & utility helpers ---- */
+
+/* Safari-style focus ring */
+@layer components {
+  .focus-apple {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(0, 113, 227, 0.4);
+  }
+  .focus-visible-ring {
+    &:focus-visible {
+      outline: 2px solid var(--color-apple-blue);
+      outline-offset: 2px;
+    }
+  }
+}
+
+/* Magic gradient text (Apple-event inspired) */
+@utility text-magic-gradient {
+  background: linear-gradient(
+    100deg,
+    var(--color-magic-pink) 0%,
+    var(--color-magic-purple) 34%,
+    var(--color-magic-violet) 66%,
+    var(--color-magic-blue) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Apple signature "hero gradient" backdrop */
+@utility bg-apple-hero {
+  background: radial-gradient(
+    110% 100% at 50% 0%,
+    rgba(41, 151, 255, 0.16) 0%,
+    rgba(191, 90, 242, 0.1) 38%,
+    rgba(94, 92, 230, 0.06) 60%,
+    transparent 78%
+  );
+}
+
+/* Glass blur for the apple nav */
+@utility backdrop-blur-apple {
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+}
+
+/* Hide scrollbar utility (for carousels) */
+@utility no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::after,
+  ::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Tailwind Typography overrides to match Apple editorial style */
+.prose-apple {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-lead: var(--color-gray-2);
+  --tw-prose-links: var(--color-link);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-counters: var(--color-gray-3);
+  --tw-prose-bullets: var(--color-gray-4);
+  --tw-prose-hr: var(--color-gray-5);
+  --tw-prose-quotes: var(--color-gray-2);
+  --tw-prose-quote-borders: var(--color-gray-5);
+  --tw-prose-captions: var(--color-gray-3);
+  --tw-prose-code: var(--color-ink);
+  --tw-prose-pre-code: #f5f5f7;
+  --tw-prose-pre-bg: var(--color-ink);
+  --tw-prose-th-borders: var(--color-gray-5);
+  --tw-prose-td-borders: var(--color-gray-6);
+  --tw-prose-invert-body: var(--color-gray-8);
+  --tw-prose-invert-headings: var(--color-white);
+  --tw-prose-invert-lead: var(--color-gray-4);
+  --tw-prose-invert-links: #2997ff;
+  --tw-prose-invert-bold: var(--color-white);
+  --tw-prose-invert-counters: var(--color-gray-4);
+  --tw-prose-invert-bullets: var(--color-gray-4);
+  --tw-prose-invert-hr: var(--color-gray-2);
+  --tw-prose-invert-quotes: var(--color-gray-3);
+  --tw-prose-invert-quote-borders: var(--color-gray-2);
+  --tw-prose-invert-captions: var(--color-gray-4);
+  --tw-prose-invert-code: var(--color-white);
+  --tw-prose-invert-pre-code: var(--color-ink);
+  --tw-prose-invert-pre-bg: var(--color-gray-8);
+  --tw-prose-invert-th-borders: var(--color-gray-2);
+  --tw-prose-invert-td-borders: var(--color-gray-1);
+  font-family: var(--font-family-apple-system);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+/* Dark mode token overrides */
+.dark body {
+  background-color: var(--color-black);
+  color: var(--color-gray-8);
+}
+
+/* Sanity Studio readability overrides. `NextStudio` must remain the page root
+   for hydration, so scope through Sanity's stable layout marker instead of
+   inserting an additional wrapper around the Studio. The body-level scope also
+   reaches dialogs and menus rendered through portals. */
+body:has([data-testid='studio-layout']) [data-ui='Button'] {
+  font-size: 1rem !important;
+  line-height: 1.35 !important;
+  min-height: 44px !important;
+  min-width: 44px;
+}
+
+body:has([data-testid='studio-layout']) [data-ui='Button'] > span {
+  min-height: 44px !important;
+  font-size: 1rem !important;
+}
+
+body:has([data-testid='studio-layout']) [data-ui='Button'][data-width='fill'] {
+  padding-inline: 16px !important;
+}
+
+body:has([data-testid='studio-layout']) button {
+  font-size: 1rem !important;
+}
+
+body:has([data-testid='studio-layout']) button:has(svg) {
+  min-width: 44px !important;
+  min-height: 44px !important;
+}
+
+body:has([data-testid='studio-layout']) svg[data-sanity-icon],
+body:has([data-testid='studio-layout']) [data-ui='Button'] svg {
+  width: 1.375rem !important;
+  height: 1.375rem !important;
+  min-width: 1.375rem !important;
+  max-width: none !important;
+  flex: 0 0 1.375rem;
+  font-size: 1.375rem !important;
+}
+
+body:has([data-testid='studio-layout'])
+  [data-ui='Button']
+  :where([data-ui='Box'], [data-ui='Flex'], span) {
+  font-size: 1rem !important;
+}
+
+body:has([data-testid='studio-layout']) [data-ui='Text'],
+body:has([data-testid='studio-layout']) [data-ui='Label'] {
+  font-size: 1rem !important;
+  line-height: 1.45 !important;
+}
+
+body:has([data-testid='studio-layout']) [data-ui='TextArea'],
+body:has([data-testid='studio-layout']) [data-ui='TextInput'],
+body:has([data-testid='studio-layout']) [data-ui='Select'] {
+  font-size: 1rem !important;
+  min-height: 42px !important;
+}
+
+body:has([data-testid='studio-layout']) [data-ui='TextArea'] {
+  line-height: 1.5 !important;
+}
+
+body:has([data-testid='studio-layout']) [contenteditable='true'] {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+  min-height: 1.6em;
+}
+
+body:has([data-testid='studio-layout']) [data-testid='pt-editor'] {
+  font-size: 1rem !important;
+  line-height: 1.6 !important;
+}
+
+body:has([data-testid='studio-layout'])
+  [data-testid='pt-editor__toolbar-card']
+  button {
+  min-width: 42px !important;
+  min-height: 42px !important;
+}
+
+body:has([data-testid='studio-layout'])
+  [data-testid='pt-editor__toolbar-card']
+  svg[data-sanity-icon] {
+  width: 1.25rem !important;
+  height: 1.25rem !important;
+  min-width: 1.25rem !important;
+  font-size: 1.25rem !important;
+}
+
+body:has([data-testid='studio-layout']) [data-testid='studio-navbar'] {
+  min-height: 72px;
+}
+
+body:has([data-testid='studio-layout'])
+  [data-testid='studio-navbar']
+  [data-ui='Button'] {
+  min-width: 46px !important;
+  min-height: 46px !important;
+}
+
+body:has([data-testid='studio-layout'])
+  [data-testid='studio-navbar']
+  svg[data-sanity-icon] {
+  width: 1.5rem !important;
+  height: 1.5rem !important;
+  min-width: 1.5rem !important;
+  font-size: 1.5rem !important;
+}
+
+/* Direct Studio selectors cover the initial paint before :has() resolves and
+   keep navigation/editor actions readable in embedded Studio webviews. */
+[data-testid='studio-layout'] [data-ui='Button'],
+[data-ui='Navbar'] [data-ui='Button'],
+[data-testid='pt-editor__toolbar-card'] button {
+  min-width: 44px !important;
+  min-height: 44px !important;
+  font-size: 1rem !important;
+}
+
+[data-testid='studio-layout'] svg[data-sanity-icon],
+[data-ui='Navbar'] svg[data-sanity-icon],
+[data-testid='pt-editor__toolbar-card'] svg[data-sanity-icon] {
+  width: 1.375rem !important;
+  height: 1.375rem !important;
+  min-width: 1.375rem !important;
+  max-width: none !important;
+  font-size: 1.375rem !important;
+}
+
+@media (max-width: 900px) {
+  body:has([data-testid='studio-layout']) [data-ui='Button'] {
+    min-width: 44px !important;
+    min-height: 44px !important;
+  }
+
+  body:has([data-testid='studio-layout']) [data-ui='Text'],
+  body:has([data-testid='studio-layout']) [data-ui='Label'] {
+    font-size: 1rem !important;
+  }
+}

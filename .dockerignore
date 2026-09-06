@@ -1,0 +1,11 @@
+.git
+.github
+.next
+.next-dev
+.netlify
+node_modules
+.env
+.env.*
+!.env.example
+*.log
+coverage
