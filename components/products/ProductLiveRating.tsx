@@ -4,6 +4,11 @@ import { createClient } from '@sanity/client'
 import { Star } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
+interface ProductRatingSnapshot {
+  rating?: number
+  reviewCount?: number
+}
+
 export default function ProductLiveRating({
   slug,
   initialRating,
@@ -28,11 +33,10 @@ export default function ProductLiveRating({
     })
     const query = `*[_type == "product" && slug.current == $slug][0]{rating,reviewCount}`
     const subscription = client
-      .listen(query, { slug }, { includeResult: true })
+      .listen<ProductRatingSnapshot>(query, { slug }, { includeResult: true })
       .subscribe((event) => {
-        const next = event.result as
-          | { rating?: number; reviewCount?: number }
-          | undefined
+        if (event.type !== 'mutation') return
+        const next = event.result
         if (next) {
           setRating(next.rating)
           setCount(next.reviewCount)

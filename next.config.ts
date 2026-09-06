@@ -11,6 +11,7 @@ const withSerwist = withSerwistInit({
   // Inject the build-time generated service worker alongside the app
   swSrc: 'app/sw.ts',
   swDest: 'public/sw.js',
+  maximumFileSizeToCacheInBytes: 3 * 1024 * 1024,
   reloadOnOnline: true,
   register: true,
 })
