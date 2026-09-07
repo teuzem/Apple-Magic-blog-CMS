@@ -389,7 +389,7 @@ export default function Comments({ postId }: CommentsProps) {
             <button
               type="button"
               onClick={() => avatarInputRef.current?.click()}
-              className="group relative h-14 w-14 shrink-0 self-center overflow-hidden rounded-full ring-2 ring-white ring-offset-2 ring-offset-gray-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-apple-blue sm:self-start dark:ring-offset-gray-1"
+              className="group relative h-20 w-20 shrink-0 self-center overflow-hidden rounded-full ring-2 ring-white ring-offset-2 ring-offset-gray-8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-apple-blue sm:h-[4.5rem] sm:w-[4.5rem] sm:self-start dark:ring-offset-gray-1"
               aria-label={t('changeAvatar')}
             >
               {avatar ? (
@@ -401,7 +401,7 @@ export default function Comments({ postId }: CommentsProps) {
                 />
               ) : (
                 <span
-                  className="flex h-full w-full items-center justify-center text-sm font-semibold text-white"
+                  className="flex h-full w-full items-center justify-center text-xl font-semibold text-white"
                   style={{
                     background:
                       'linear-gradient(135deg,#ff375f,#bf5af2,#2997ff)',
@@ -411,7 +411,7 @@ export default function Comments({ postId }: CommentsProps) {
                 </span>
               )}
               <span className="absolute inset-0 flex items-center justify-center bg-black/55 text-white opacity-0 transition-opacity group-hover:opacity-100">
-                <UploadCloud size={16} />
+                <UploadCloud size={22} />
               </span>
             </button>
             <input
@@ -566,18 +566,18 @@ function CommentNode({
         )}
       >
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <div className="flex items-center gap-2.5">
+          <div className="flex min-w-0 items-center gap-3">
             {node.avatar ? (
               <SanityImage
                 asset={node.avatar}
                 alt=""
-                width={32}
-                height={32}
-                className="h-8 w-8 rounded-full"
+                width={112}
+                height={112}
+                className="h-12 w-12 shrink-0 rounded-full sm:h-14 sm:w-14"
               />
             ) : (
               <span
-                className="flex h-8 w-8 items-center justify-center rounded-full text-xs font-bold text-white"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold text-white sm:h-14 sm:w-14 sm:text-lg"
                 style={{
                   background: 'linear-gradient(135deg,#ff375f,#bf5af2,#2997ff)',
                 }}
@@ -585,7 +585,7 @@ function CommentNode({
                 {(node.name[0] || 'G').toUpperCase()}
               </span>
             )}
-            <div>
+            <div className="min-w-0">
               <p className="text-sm font-semibold leading-tight text-ink dark:text-white">
                 {node.name}
               </p>

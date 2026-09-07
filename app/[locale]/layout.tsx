@@ -5,6 +5,7 @@ import { getMessages, setRequestLocale } from 'next-intl/server'
 import { getTranslations } from 'next-intl/server'
 import { Suspense } from 'react'
 
+import { ConsentAndNewsletterPopups } from '@/components/layout/ConsentAndNewsletterPopups'
 import { Footer } from '@/components/layout/Footer'
 import { Navigation } from '@/components/layout/Navigation'
 import { AppProviders } from '@/components/providers/AppProviders'
@@ -112,6 +113,7 @@ export default async function LocaleLayout({
         <Navigation categories={categories} navItems={nav?.items ?? []} />
         <main id="main-content">{children}</main>
         <Footer footerGroups={nav?.footer ?? []} settings={settings} />
+        <ConsentAndNewsletterPopups />
       </AppProviders>
     </NextIntlClientProvider>
   )

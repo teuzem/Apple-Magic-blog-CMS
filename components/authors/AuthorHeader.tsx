@@ -101,9 +101,9 @@ export default function AuthorHeader({ author }: AuthorHeaderProps) {
           {/* Socials */}
           {socials.length > 0 && (
             <div className="flex shrink-0 flex-wrap justify-center gap-2 sm:justify-start">
-              {socials.map((s) => (
+              {socials.map((s, index) => (
                 <a
-                  key={s.platform + s.url}
+                  key={`${s.platform}-${s.url}-${index}`}
                   href={s.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -161,9 +161,9 @@ export default function AuthorHeader({ author }: AuthorHeaderProps) {
                 Expertise
               </p>
               <div className="mt-1.5 flex flex-wrap gap-1.5">
-                {author.expertise.map((e) => (
+                {author.expertise.map((e, index) => (
                   <span
-                    key={e}
+                    key={`${e}-${index}`}
                     className="inline-flex items-center gap-1 rounded-full bg-magic-purple/10 px-2 py-0.5 text-xs font-medium text-magic-purple"
                   >
                     <StarSparkle size={10} /> {e}
@@ -178,8 +178,8 @@ export default function AuthorHeader({ author }: AuthorHeaderProps) {
                 <Award size={12} /> Achievements
               </p>
               <ul className="mt-1.5 space-y-1 text-[0.8125rem] text-gray-2 dark:text-gray-8">
-                {author.achievements.map((a) => (
-                  <li key={a} className="flex gap-1.5">
+                {author.achievements.map((a, index) => (
+                  <li key={`${a}-${index}`} className="flex gap-1.5">
                     <span className="text-apple-blue">•</span>
                     {a}
                   </li>
@@ -193,8 +193,8 @@ export default function AuthorHeader({ author }: AuthorHeaderProps) {
                 <GraduationCap size={12} /> Education
               </p>
               <ul className="mt-1.5 space-y-1.5 text-[0.8125rem] text-gray-2 dark:text-gray-8">
-                {author.education.map((ed) => (
-                  <li key={(ed.degree || '') + (ed.school || '')}>
+                {author.education.map((ed, index) => (
+                  <li key={`${ed.degree || ''}-${ed.school || ''}-${index}`}>
                     {ed.degree}
                     {ed.school && (
                       <span className="text-gray-3 dark:text-gray-4">

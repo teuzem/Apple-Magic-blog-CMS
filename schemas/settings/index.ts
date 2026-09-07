@@ -117,6 +117,12 @@ export default defineType({
         { name: 'youtube', title: 'YouTube', type: 'url' },
         { name: 'tiktok', title: 'TikTok', type: 'url' },
         { name: 'pinterest', title: 'Pinterest', type: 'url' },
+        { name: 'linkedin', title: 'LinkedIn', type: 'url' },
+        { name: 'threads', title: 'Threads', type: 'url' },
+        { name: 'whatsapp', title: 'WhatsApp', type: 'url' },
+        { name: 'github', title: 'GitHub', type: 'url' },
+        { name: 'rss', title: 'RSS feed', type: 'url' },
+        { name: 'website', title: 'Website', type: 'url' },
       ],
     }),
     defineField({

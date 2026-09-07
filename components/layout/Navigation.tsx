@@ -87,7 +87,11 @@ export function Navigation({
     ...sourceItems.filter(
       (item) => !required.some((requiredItem) => requiredItem.url === item.url),
     ),
-  ]
+  ].filter(
+    (item, index, items) =>
+      item.url &&
+      items.findIndex((candidate) => candidate.url === item.url) === index,
+  )
 
   const itemLabel = (item: NavigationItem) =>
     locale === 'fr' ? item.labelFr || item.label : item.label
@@ -124,7 +128,7 @@ export function Navigation({
         {/* Desktop links */}
         <ul className="hidden items-center gap-1 md:flex">
           {navLinkItems.slice(0, 7).map((item) => (
-            <li key={item.url} className="relative">
+            <li key={`desktop-nav-${item.url}`} className="relative">
               <Link
                 href={item.url as any}
                 className="rounded-md px-3 py-2 text-[0.8125rem] text-gray-3 transition-colors hover:text-ink dark:text-gray-4 dark:hover:text-white"
@@ -161,7 +165,7 @@ export function Navigation({
       >
         <ul className="flex max-h-[calc(100svh-3rem)] flex-col gap-1 overflow-y-auto px-4 pb-6 pt-2 sm:px-6">
           {navLinkItems.map((item) => (
-            <li key={item.url}>
+            <li key={`mobile-nav-${item.url}`}>
               <Link
                 href={item.url as any}
                 onClick={() => setMenuOpen(false)}

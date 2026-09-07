@@ -38,13 +38,13 @@ export default function AuthorBox({ author, locale }: AuthorBoxProps) {
           <SanityImage
             asset={author.picture}
             alt={author.name}
-            className="h-20 w-20 shrink-0 rounded-full"
-            width={160}
-            height={160}
+            className="h-24 w-24 shrink-0 rounded-full sm:h-28 sm:w-28"
+            width={224}
+            height={224}
           />
         ) : (
           <div
-            className="flex h-20 w-20 shrink-0 items-center justify-center rounded-full text-2xl font-bold text-white"
+            className="flex h-24 w-24 shrink-0 items-center justify-center rounded-full text-3xl font-bold text-white sm:h-28 sm:w-28 sm:text-4xl"
             style={{
               background: 'linear-gradient(135deg,#ff375f,#bf5af2,#2997ff)',
             }}
@@ -81,9 +81,9 @@ export default function AuthorBox({ author, locale }: AuthorBoxProps) {
 
         {author.expertise && author.expertise.length > 0 && (
           <div className="mt-3 flex flex-wrap justify-center gap-2 sm:justify-start">
-            {author.expertise.map((e) => (
+            {author.expertise.map((e, index) => (
               <span
-                key={e}
+                key={`${e}-${index}`}
                 className="inline-flex items-center gap-1 rounded-full bg-magic-purple/10 px-2.5 py-0.5 text-xs font-medium text-magic-purple"
               >
                 <StarSparkle size={10} /> {e}
@@ -94,9 +94,9 @@ export default function AuthorBox({ author, locale }: AuthorBoxProps) {
 
         {socials.length > 0 && (
           <div className="mt-3 flex justify-center gap-1 sm:justify-start">
-            {socials.map((s) => (
+            {socials.map((s, index) => (
               <a
-                key={s.platform + s.url}
+                key={`${s.platform}-${s.url}-${index}`}
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"

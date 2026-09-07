@@ -2,6 +2,10 @@ import { Globe2 } from 'lucide-react'
 import { useLocale, useTranslations } from 'next-intl'
 
 import { AppleWordmark } from '@/components/brand/AppleWordmark'
+import {
+  normalizePlatform,
+  SocialBrandIcon,
+} from '@/components/brand/SocialBrandIcon'
 import { Link } from '@/i18n/navigation'
 import { SITE } from '@/lib/constants'
 import type { Settings } from '@/lib/sanity.queries'
@@ -127,6 +131,19 @@ export function Footer({ footerGroups = [], settings }: FooterProps) {
 
   const groups = mergeConfiguredGroups(configuredGroups, defaultGroups)
   const currentYear = new Date().getUTCFullYear()
+  const socialLinks = Object.entries(settings?.social || {}).filter(
+    ([, url]) => typeof url === 'string' && url.length > 0,
+  )
+  const socialHoverClass: Record<string, string> = {
+    x: 'hover:text-black dark:hover:text-white',
+    instagram: 'hover:text-[#e4405f]',
+    youtube: 'hover:text-[#ff0000]',
+    linkedin: 'hover:text-[#0a66c2]',
+    facebook: 'hover:text-[#1877f2]',
+    tiktok: 'hover:text-black dark:hover:text-white',
+    pinterest: 'hover:text-[#e60023]',
+    whatsapp: 'hover:text-[#25d366]',
+  }
 
   return (
     <footer className="border-t border-gray-7 bg-gray-8 text-gray-3 dark:border-gray-2 dark:bg-black">
@@ -144,19 +161,19 @@ export function Footer({ footerGroups = [], settings }: FooterProps) {
             </p>
           </div>
 
-          {groups.map((group) => (
-            <div key={group.heading}>
-              <h3 className="mb-6 text-[0.75rem] font-semibold uppercase tracking-[0.08em] text-gray-2 dark:text-gray-8">
+          {groups.map((group, groupIndex) => (
+            <div key={`${group.heading}-${groupIndex}`}>
+              <h3 className="mb-5 text-[0.8125rem] font-semibold uppercase tracking-[0.08em] text-gray-2 sm:mb-6 sm:text-[0.75rem] dark:text-gray-8">
                 {group.heading}
               </h3>
               <ul className="space-y-4">
-                {group.links.map((link) => (
-                  <li key={`${group.heading}-${link.url}`}>
+                {group.links.map((link, linkIndex) => (
+                  <li key={`${group.heading}-${link.url}-${linkIndex}`}>
                     {link.external ||
                     /^(?:https?:|mailto:|tel:)/.test(link.url) ? (
                       <a
                         href={link.url}
-                        className="text-[0.8125rem] transition-colors hover:text-apple-blue"
+                        className="text-[0.9375rem] leading-relaxed transition-colors hover:text-apple-blue sm:text-[0.8125rem]"
                         rel={
                           link.url.startsWith('http')
                             ? 'noopener noreferrer'
@@ -168,7 +185,7 @@ export function Footer({ footerGroups = [], settings }: FooterProps) {
                     ) : (
                       <Link
                         href={link.url as any}
-                        className="text-[0.8125rem] transition-colors hover:text-apple-blue"
+                        className="text-[0.9375rem] leading-relaxed transition-colors hover:text-apple-blue sm:text-[0.8125rem]"
                       >
                         {link.label}
                       </Link>
@@ -180,14 +197,35 @@ export function Footer({ footerGroups = [], settings }: FooterProps) {
           ))}
         </div>
 
-        <div className="mt-16 flex min-w-0 flex-col items-start justify-between gap-6 border-t border-gray-6 pt-8 text-[0.75rem] sm:mt-20 sm:flex-row sm:items-center sm:pt-10 dark:border-gray-2">
+        {socialLinks.length > 0 && (
+          <div className="mt-14 flex flex-wrap items-center justify-center gap-3 border-t border-gray-6 pt-8 dark:border-gray-2">
+            {socialLinks.map(([platform, url]) => {
+              const normalized = normalizePlatform(platform)
+              return (
+                <a
+                  key={`${platform}-${url}`}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group inline-flex h-11 w-11 items-center justify-center rounded-full border border-gray-6 bg-white text-gray-3 transition-all hover:-translate-y-0.5 hover:border-transparent hover:shadow-md dark:border-gray-2 dark:bg-gray-1 dark:text-gray-7 ${socialHoverClass[normalized] || 'hover:text-apple-blue'}`}
+                  aria-label={platform}
+                  title={platform}
+                >
+                  <SocialBrandIcon platform={platform} size={20} />
+                </a>
+              )
+            })}
+          </div>
+        )}
+
+        <div className="mt-10 flex min-w-0 flex-col items-center justify-between gap-5 border-t border-gray-6 pt-8 text-center text-[0.8125rem] leading-relaxed sm:mt-12 sm:flex-row sm:items-center sm:gap-6 sm:pt-10 sm:text-left sm:text-[0.75rem] dark:border-gray-2">
           <p className="max-w-full break-words">
             {(locale === 'fr'
               ? settings?.footer?.copyrightFr || settings?.footer?.copyright
               : settings?.footer?.copyright) ||
               `Copyright (c) ${currentYear} ${SITE.name}. ${t('allRightsReserved')}`}
           </p>
-          <div className="flex max-w-full flex-wrap items-center gap-x-5 gap-y-3">
+          <div className="flex max-w-full flex-wrap items-center justify-center gap-x-5 gap-y-3 sm:justify-end">
             <Link
               href="/pages/privacy"
               className="transition-colors hover:text-apple-blue"

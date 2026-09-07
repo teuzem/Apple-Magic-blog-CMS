@@ -24,7 +24,7 @@ export default function FaqBlock({
         {heading}
       </h2>
       <div className="divide-y divide-gray-6 border-y border-gray-6 dark:divide-gray-2 dark:border-gray-2">
-        {items.map((item: any) => {
+        {items.map((item: any, index: number) => {
           const question =
             locale === 'fr'
               ? item.questionFr || item.question
@@ -35,7 +35,10 @@ export default function FaqBlock({
               : item.answer || item.answerFr
           if (!question || !answer) return null
           return (
-            <details key={item._key || question} className="group py-4">
+            <details
+              key={`${item._key || question}-${index}`}
+              className="group py-4"
+            >
               <summary className="cursor-pointer list-none pr-8 text-lg font-semibold text-ink marker:hidden dark:text-white">
                 {question}
               </summary>

@@ -7,7 +7,7 @@
     "format": "npx prettier --write . --ignore-path .gitignore --cache",
     "lint": "eslint .",
     "lint:fix": "npm run format && npm run lint -- --fix",
-    "start": "node .next/standalone/server.js",
+    "start": "node scripts/start-standalone.mjs",
     "start:next": "next start",
     "type-check": "tsc --noEmit"
   },

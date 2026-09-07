@@ -95,12 +95,12 @@ export function CategoryNav({ categories = [] }: CategoryNavProps) {
   return (
     <div className="space-y-6">
       <div className="no-scrollbar -mx-4 grid snap-x grid-flow-col grid-rows-1 gap-4 overflow-x-auto px-4 pb-2 lg:mx-0 lg:grid-flow-row lg:grid-cols-4 lg:overflow-visible lg:px-0">
-        {items.map((cat) => {
+        {items.map((cat, index) => {
           const slug = cat.slug.toLowerCase()
           const accent = cat.color || '#2997ff'
           return (
             <Link
-              key={slug}
+              key={`${slug}-${index}`}
               href={`/categories/${slug}` as any}
               className="group flex min-w-[240px] snap-start flex-col justify-between gap-4 rounded-xl border border-gray-7 bg-white p-5 transition-colors duration-300 hover:border-apple-blue/30 sm:min-w-[260px] lg:min-w-0 dark:border-gray-2 dark:bg-gray-1"
             >

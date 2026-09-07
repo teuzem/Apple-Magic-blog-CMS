@@ -11,7 +11,10 @@ export const useCdn = false
 // Sanity project via .env.local to go live.
 export const dataset = process.env.NEXT_PUBLIC_SANITY_DATASET || 'production'
 
-export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || ''
+// The project ID is public configuration. Keeping the production project as a
+// fallback prevents a cloud build with a missing public environment variable
+// from emitting a Studio bundle that cannot connect to Sanity.
+export const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || '7o98eaps'
 
 export const readToken = process.env.SANITY_API_READ_TOKEN || ''
 

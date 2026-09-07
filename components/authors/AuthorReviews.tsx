@@ -25,6 +25,7 @@ export default function AuthorReviews({
   const [status, setStatus] = useState<'idle' | 'saving' | 'success' | 'error'>(
     'idle',
   )
+  const [errorMessage, setErrorMessage] = useState('')
   const [open, setOpen] = useState(false)
 
   const load = useCallback(
@@ -35,6 +36,9 @@ export default function AuthorReviews({
           setReviews(data.reviews || [])
           setAverage(Number(data.average || 0))
           setDistribution(data.distribution || {})
+          setSelected((current) =>
+            Math.min(current, Math.max((data.reviews || []).length - 1, 0)),
+          )
         })
         .catch(() => {}),
     [authorSlug],
@@ -55,6 +59,7 @@ export default function AuthorReviews({
     event.preventDefault()
     if (!rating || !name.trim()) return
     setStatus('saving')
+    setErrorMessage('')
     try {
       const response = await fetch('/api/author-reviews', {
         method: 'POST',
@@ -67,14 +72,32 @@ export default function AuthorReviews({
           website: '',
         }),
       })
-      if (!response.ok) throw new Error('failed')
+      const data = await response.json().catch(() => ({}))
+      if (!response.ok) {
+        throw new Error(data.error || 'failed')
+      }
+      if (Array.isArray(data.reviews)) {
+        setReviews(data.reviews)
+        setAverage(Number(data.average || 0))
+        setDistribution(data.distribution || {})
+        setSelected(0)
+      } else {
+        await load()
+      }
       setStatus('success')
       setName('')
       setReviewText('')
       setRating(0)
       setOpen(false)
-    } catch {
+    } catch (error) {
       setStatus('error')
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : fr
+            ? 'Impossible d’enregistrer votre avis.'
+            : 'Could not save your review.',
+      )
     }
   }
 
@@ -148,7 +171,7 @@ export default function AuthorReviews({
 
         <div className="min-w-0">
           {current ? (
-            <div className="flex min-w-0 items-start gap-1 sm:gap-2">
+            <div className="flex min-w-0 items-start gap-1 sm:gap-3">
               <button
                 type="button"
                 onClick={() =>
@@ -160,22 +183,40 @@ export default function AuthorReviews({
                 <ChevronLeft size={18} />
               </button>
               <article className="min-w-0 flex-1">
-                <div className="flex flex-wrap items-center gap-2">
-                  <div className="flex gap-0.5 text-orange">
-                    {stars.map((star) => (
-                      <Star
-                        key={star}
-                        size={14}
-                        fill={star <= current.rating ? 'currentColor' : 'none'}
+                <div className="flex min-w-0 items-center gap-3">
+                  <span
+                    className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full text-base font-bold text-white shadow-sm ring-2 ring-white dark:ring-gray-1 sm:h-14 sm:w-14 sm:text-lg"
+                    style={{
+                      background:
+                        'linear-gradient(135deg,#ff375f,#bf5af2,#2997ff)',
+                    }}
+                    aria-hidden="true"
+                  >
+                    {(current.name[0] || 'R').toUpperCase()}
+                  </span>
+                  <div className="min-w-0">
+                    <div className="flex flex-wrap items-center gap-1.5">
+                      <span className="truncate text-sm font-semibold text-ink dark:text-white">
+                        {current.name}
+                      </span>
+                      <CircleCheck
+                        size={15}
+                        className="shrink-0 text-success"
+                        aria-label={fr ? 'Avis vérifié' : 'Verified reader'}
                       />
-                    ))}
+                    </div>
+                    <div className="mt-1 flex gap-0.5 text-orange">
+                      {stars.map((star) => (
+                        <Star
+                          key={star}
+                          size={15}
+                          fill={
+                            star <= current.rating ? 'currentColor' : 'none'
+                          }
+                        />
+                      ))}
+                    </div>
                   </div>
-                  <span className="text-xs text-gray-3">{current.name}</span>
-                  <CircleCheck
-                    size={14}
-                    className="text-success"
-                    aria-label={fr ? 'Avis vérifié' : 'Verified reader'}
-                  />
                 </div>
                 <h3 className="mt-2 break-words text-base font-semibold text-ink dark:text-white">
                   {current.title || (fr ? 'Avis lecteur' : 'Reader review')}
@@ -314,9 +355,10 @@ export default function AuthorReviews({
           )}
           {status === 'error' && (
             <p className="mt-3 text-sm text-red-500">
-              {fr
-                ? 'Impossible d’enregistrer votre avis.'
-                : 'Could not save your review.'}
+              {errorMessage ||
+                (fr
+                  ? 'Impossible d’enregistrer votre avis.'
+                  : 'Could not save your review.')}
             </p>
           )}
         </form>

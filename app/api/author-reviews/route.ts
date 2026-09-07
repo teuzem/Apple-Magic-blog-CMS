@@ -8,6 +8,25 @@ export const dynamic = 'force-dynamic'
 
 const buckets = new Map<string, number[]>()
 
+function summarize(
+  reviews: Awaited<ReturnType<typeof getApprovedAuthorReviews>>,
+) {
+  const average = reviews.length
+    ? reviews.reduce((sum, review) => sum + Number(review.rating || 0), 0) /
+      reviews.length
+    : 0
+  const distribution = [5, 4, 3, 2, 1].reduce<Record<string, number>>(
+    (all, value) => {
+      all[String(value)] = reviews.filter(
+        (review) => review.rating === value,
+      ).length
+      return all
+    },
+    {},
+  )
+  return { average, distribution, total: reviews.length }
+}
+
 function limited(ip: string) {
   const now = Date.now()
   const recent = (buckets.get(ip) || []).filter((time) => now - time < 60_000)
@@ -30,27 +49,21 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ reviews: [], average: 0, total: 0 })
   try {
     const reviews = await getApprovedAuthorReviews(getClient(), authorSlug)
-    const average = reviews.length
-      ? reviews.reduce((sum, review) => sum + Number(review.rating || 0), 0) /
-        reviews.length
-      : 0
-    const distribution = [5, 4, 3, 2, 1].reduce<Record<string, number>>(
-      (all, rating) => {
-        all[String(rating)] = reviews.filter(
-          (review) => review.rating === rating,
-        ).length
-        return all
+    const summary = summarize(reviews)
+    return NextResponse.json(
+      {
+        reviews,
+        ...summary,
       },
-      {},
+      {
+        headers: { 'Cache-Control': 'no-store' },
+      },
     )
-    return NextResponse.json({
-      reviews,
-      average,
-      total: reviews.length,
-      distribution,
-    })
   } catch {
-    return NextResponse.json({ reviews: [], average: 0, total: 0 })
+    return NextResponse.json(
+      { reviews: [], average: 0, total: 0, distribution: {} },
+      { status: 200, headers: { 'Cache-Control': 'no-store' } },
+    )
   }
 }
 
@@ -95,7 +108,13 @@ export async function POST(req: NextRequest) {
   }
   const token = process.env.SANITY_API_WRITE_TOKEN
   if (!isConfigured || !token) {
-    return NextResponse.json({ ok: true, queued: true }, { status: 202 })
+    return NextResponse.json(
+      {
+        error:
+          'Author ratings are temporarily unavailable. Configure SANITY_API_WRITE_TOKEN on the server.',
+      },
+      { status: 503 },
+    )
   }
   try {
     const client = getClient({ token, perspective: 'drafts' } as any)
@@ -112,10 +131,22 @@ export async function POST(req: NextRequest) {
       rating,
       title: body.title?.trim().slice(0, 120),
       content: body.content?.trim().slice(0, 1200) || 'Rated this author.',
-      status: 'pending',
+      // Reader ratings are published immediately. They are still subject to
+      // the rate limiter and validation above, while the public query only
+      // exposes this explicit approved state.
+      status: 'approved',
       createdAt: new Date().toISOString(),
     })
-    return NextResponse.json({ ok: true, pending: true }, { status: 201 })
+    const reviews = await getApprovedAuthorReviews(getClient(), body.authorSlug)
+    return NextResponse.json(
+      {
+        ok: true,
+        published: true,
+        reviews,
+        ...summarize(reviews),
+      },
+      { status: 201, headers: { 'Cache-Control': 'no-store' } },
+    )
   } catch {
     return NextResponse.json(
       { error: 'Failed to save rating' },

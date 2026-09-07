@@ -2,7 +2,7 @@ module.exports = {
   apps: [
     {
       name: 'apple-magic-blog',
-      script: '.next/standalone/server.js',
+      script: 'scripts/start-standalone.mjs',
       cwd: __dirname,
       instances: 1,
       exec_mode: 'fork',

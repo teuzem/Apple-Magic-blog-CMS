@@ -175,6 +175,19 @@
     "search": "Rechercher",
     "region": "Afrique"
   },
+  "consent": {
+    "title": "Votre vie privée compte",
+    "body": "Nous utilisons des cookies essentiels pour faire fonctionner le site et des cookies optionnels pour mesurer l’usage de façon agrégée. Vous gardez le contrôle.",
+    "learnMore": "Lire notre politique de cookies",
+    "essential": "Essentiels uniquement",
+    "accept": "Tout accepter",
+    "close": "Fermer"
+  },
+  "newsletterPopup": {
+    "title": "Recevez Apple Magic chaque semaine",
+    "body": "Une sélection concise de l’actualité Apple, de tests et de conseils d’achat pour l’Afrique.",
+    "privacy": "Désabonnement possible à tout moment. Nous ne vendons jamais votre e-mail."
+  },
   "pwa": {
     "install": "Installer Apple Magic",
     "offlineTitle": "Vous êtes hors ligne",

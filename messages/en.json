@@ -175,6 +175,19 @@
     "search": "Search",
     "region": "Africa"
   },
+  "consent": {
+    "title": "Your privacy matters",
+    "body": "We use essential cookies to keep the site working and optional cookies to understand aggregated usage. You stay in control.",
+    "learnMore": "Read our cookie policy",
+    "essential": "Essential only",
+    "accept": "Accept all",
+    "close": "Close"
+  },
+  "newsletterPopup": {
+    "title": "Get the Apple Magic weekly",
+    "body": "A concise digest of Apple news, reviews and buying advice for Africa.",
+    "privacy": "Unsubscribe anytime. We never sell your email."
+  },
   "pwa": {
     "install": "Install Apple Magic",
     "offlineTitle": "You're offline",
